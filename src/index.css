@@ -1,0 +1,200 @@
+* { box-sizing: border-box; }
+
+:root {
+  --primary: #3d5a80;
+  --primary-dark: #293e59;
+  --accent: #e07a5f;
+  --bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4 { margin: 0 0 0.5rem 0; }
+
+/* Auth pages */
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.auth-card {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.auth-card h1 { color: var(--primary); }
+.auth-subtitle { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
+
+.auth-card label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.auth-card input, select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.auth-card button, .card button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.auth-card button:hover, .card button:hover { background: var(--primary-dark); }
+
+.auth-switch { text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); }
+.auth-switch a { color: var(--primary); font-weight: 600; text-decoration: none; }
+
+/* Dashboard shell */
+.dashboard-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: var(--primary-dark);
+  color: white;
+  padding: 1.5rem 1rem;
+  flex-shrink: 0;
+}
+
+.brand { font-size: 1.3rem; font-weight: 700; margin-bottom: 2rem; padding: 0 0.5rem; }
+
+.nav-link {
+  display: block;
+  padding: 0.65rem 0.75rem;
+  border-radius: 6px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+  font-size: 0.92rem;
+}
+
+.nav-link:hover { background: rgba(255,255,255,0.08); }
+.nav-link.active { background: var(--primary); color: white; font-weight: 600; }
+
+.main-area { flex: 1; display: flex; flex-direction: column; }
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-title { font-weight: 600; }
+
+.logout-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.logout-btn:hover { background: var(--bg); }
+
+.content { padding: 2rem; flex: 1; }
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.muted { color: var(--text-muted); font-size: 0.9rem; }
+
+/* Stat cards */
+.stat-cards { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+
+.stat-card {
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.stat-value { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+.stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+/* Table */
+.data-table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; }
+.data-table th, .data-table td {
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.data-table th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-high { background: #fde2e1; color: #c0392b; }
+.badge-medium { background: #fef3c7; color: #b45309; }
+.badge-low { background: #d1fae5; color: #047857; }
+.badge-type { background: #e0e7ff; color: #4338ca; }
+
+/* Quiz */
+.quiz-question { margin-bottom: 1.25rem; }
+.quiz-options { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.5rem; }
+.quiz-option { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer; }
+.result-score { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+
+/* Resources */
+.resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.resource-card { border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+
+/* Achievements */
+.achievement-grid { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+.achievement-card {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border);
+  font-size: 0.9rem; min-width: 200px;
+}
+.achievement-card.earned { background: #fffbeb; border-color: #fcd34d; }
+.achievement-card.locked { opacity: 0.5; }
+.achievement-icon { font-size: 1.3rem; }
